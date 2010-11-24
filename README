@@ -1,0 +1,12 @@
+Usage:
+<stream of words> | xargs whoozr.rb 
+
+Output: (e.g.)
+streptococc.us is available
+
+Flaws: (notice I saved this for last)
+It's hardcoded for the extensions to try. 
+It needs a Gemfile to make loading the whois gem brainless. 
+It should have a command line option to specify the list of TLDs to check. 
+It should spawn N threads to speed up the search.
+It needs tests?
