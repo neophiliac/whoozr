@@ -1,14 +1,12 @@
 The whoozr script looks for domains based on complete words that happen
 to contain a TLD at the end, e.g. streptococcus or windbag.
 
-Usage:
-whoozr --input file.txt
-or
-whoozr --tlds us,ag,net --input file.txt
+Run with '-h' to see parameters.
 
 Output shows available domains: (e.g.)
 streptococc.us is available
 
 Flaws: (notice I saved this for last)
 It should spawn N threads to speed up the search.
-It needs tests?
+It should handle 'whois' calls being throttled
+It needs tests
