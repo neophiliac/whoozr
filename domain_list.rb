@@ -1,7 +1,11 @@
+require 'forwardable'
 class DomainList
-#  include Enumerable
+  extend Forwardable
+  include Enumerable
 
   attr_reader :words, :tlds, :concat, :domains
+  def_delegators :domains, :empty?, :to_a, :each
+
   def initialize(args)
     @words  = args[:words]
     @tlds   = args[:tlds] || "me,ag,org,us"
@@ -10,11 +14,7 @@ class DomainList
     @concat ? add_tlds : find_tlds
   end
 
-  def each(&block)
-    @domains.each do |member|
-      block.nil? ? member : block.call(member)
-    end
-  end
+private
 
   def add_tlds
     tld_list = @tlds.split(',')

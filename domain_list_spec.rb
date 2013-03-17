@@ -8,7 +8,7 @@ describe DomainList do
       subject(:domainlist) { DomainList.new(words: ['word']) }
 
       it "returns nothing from #each" do
-        expect(domainlist.each).to eq([])
+        expect(domainlist.empty?).to be_true
       end
     end
 
@@ -16,7 +16,9 @@ describe DomainList do
       subject(:domainlist) { DomainList.new(words: ['nonexistent939485me']) }
 
       it "returns one domain from #each" do
-        expect(domainlist.each).to eq(["nonexistent939485.me"])
+        domainlist.each do |d|
+          expect(d).to eq("nonexistent939485.me")
+        end
       end
     end
 
