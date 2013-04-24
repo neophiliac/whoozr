@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    trollop (2.0)
+    whois (3.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  trollop
+  whois
